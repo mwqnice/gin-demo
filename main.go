@@ -1,11 +1,11 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/mwqnice/gin-demo/internal/router"
+)
+
 
 func main()  {
-	r := gin.Default()
-	r.GET("/", func(c *gin.Context) {
-		c.String(200, "Hello Wold")
-	})
-	r.Run(":8080") // 监听并在 0.0.0.0:8080 上启动服务
+	router := router.NewRouter()
+	router.Run(":8080") // 监听并在 0.0.0.0:8080 上启动服务
 }
